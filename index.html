@@ -191,17 +191,17 @@
           </ul>
         </div>
         <button class="openBurgerButton" id="openBurgerButton">
-          <hr class="openBurgerButton__line first" />
-          <hr class="openBurgerButton__line second" />
-          <hr class="openBurgerButton__line third" />
+          <span class="openBurgerButton__line first"></span>
+          <span class="openBurgerButton__line second"></span>
+          <span class="openBurgerButton__line third"></span>
         </button>
         <div class="section__content">
           <h2 class="secondaryTitle">Меня зовут Александра Смит</h2>
           <h1 class="mainTitle">Я web-разработчик из города Москва</h1>
           <div class="heroSection__buttonWrapper">
-            <a href="#portfolio" class="pageLink">
-              <button class="button">Портфолио</button>
-            </a>
+            <button class="button">
+              <a href="#portfolio" class="pageLink"></a>Портфолио
+            </button>
             <a href="#aboutMe" class="pageLink heroSection__aboutMeLink"
               >Про меня</a
             >
@@ -518,7 +518,7 @@
                   type="text"
                   id="name"
                   class="form__input"
-                  data="name"
+                  dataType="name"
                   required
                 />
                 <span class="form__errorMessage"></span>
@@ -529,7 +529,7 @@
                   type="email"
                   id="email"
                   class="form__input invalid"
-                  data="email"
+                  dataType="email"
                   required
                 />
                 <span class="form__errorMessage"></span>
@@ -539,7 +539,7 @@
                 <textarea
                   id="message"
                   class="form__input textarea"
-                  data="message"
+                  dataType="message"
                   required
                 ></textarea>
                 <span class="form__errorMessage"></span>
