@@ -8,6 +8,8 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 
+const modal = document.querySelector(".submitModal");
+
 checkbox.addEventListener("change", () => {
   submitButton.disabled = !checkbox.checked;
 });
@@ -89,12 +91,32 @@ form.addEventListener("submit", (event) => {
     },
     body: JSON.stringify(formData),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok: " + response.statusText);
+      }
+      return response.json();
+    })
     .then((data) => {
-      alert(`${data.name}, я свяжусь с вами в ближайшее время!`);
+      const title = `Спасибо ${data.name}!`;
+      const message = "Я свяжусь с вами в ближайшее время";
+      openModal(title, message);
     })
     .catch((error) => {
       console.error("Ошибка:", error);
-      alert("Произошла ошибка при отправке формы.");
+      const title = "Произошла ошибка при отправке формы.";
+      openModal(title);
     });
 });
+
+function openModal(title, message) {
+  const modalTitle = modal.querySelector(".submitModal__title");
+  const modalMessage = modal.querySelector(".submitModal__message");
+  modalTitle.textContent = title;
+  modalMessage.textContent = message ? message : "";
+  modal.classList.toggle("active");
+
+  setTimeout(() => {
+    modal.classList.toggle("active");
+  }, 3000);
+}
