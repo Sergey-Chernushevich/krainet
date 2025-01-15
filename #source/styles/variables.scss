@@ -1,0 +1,44 @@
+:root {
+  --primary: #ffa501;
+  --primary-hover: #e27c00;
+  --primary-active: #bb5502;
+  --primary-disabled: #fff5c5;
+  --error-color: #ff0000;
+  --font-color-dark: #000000;
+  --font-color-light: #ffffff;
+  --font-family: "Poppins", sans-serif;
+  --font-size: 12px;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --transotoin-time: 0.1s;
+}
+
+@mixin paragraph {
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+}
+
+@mixin title-h1 {
+  line-height: 125%;
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+}
+
+@mixin title-h2 {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+@mixin title-h3 {
+  font-size: 36px;
+  line-height: 167%;
+  font-weight: var(--font-weight-bold);
+}
+@mixin title-h4 {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+}
+
+@mixin title-h5 {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+}
