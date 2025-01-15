@@ -32,7 +32,7 @@ function validateEmail(email) {
 
 formInputs.forEach((input) => {
   input.addEventListener("blur", function () {
-    const attributeValue = input.getAttribute("data");
+    const attributeValue = input.getAttribute("dataType");
     const errorMessage = input.nextElementSibling;
 
     switch (attributeValue) {
