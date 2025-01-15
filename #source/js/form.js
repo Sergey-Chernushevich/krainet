@@ -8,6 +8,8 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 
+const modal = document.querySelector(".submitModal");
+
 checkbox.addEventListener("change", () => {
   submitButton.disabled = !checkbox.checked;
 });
@@ -106,8 +108,6 @@ form.addEventListener("submit", (event) => {
       openModal(title);
     });
 });
-
-const modal = document.querySelector(".submitModal");
 
 function openModal(title, message) {
   const modalTitle = modal.querySelector(".submitModal__title");
